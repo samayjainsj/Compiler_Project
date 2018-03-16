@@ -17,7 +17,7 @@ any [a-zA-z0-9~`!@#$%\\^&*()-{}[\]=|/?.>,<'":;]
 ^("+"|"-")*[0-9]+							printf("Signed Integer: %s\n", yytext);	
 
 "+"|"-"|"*"|"/"								printf("Arithmetic Operator: %s\n", yytext);
-"="									printf("Equal: %s\n", yytext);
+"="									printf("Assign Operator: %s\n", yytext);
 ">="|"<="|">"|"<"|"=="|"!="						printf("Relational Operator: %s\n", yytext);
 
 "/*"({any})*"*/"							printf("Comment: %s\n", yytext);
@@ -26,7 +26,7 @@ any [a-zA-z0-9~`!@#$%\\^&*()-{}[\]=|/?.>,<'":;]
 "}"|")"|"]"								printf("Closing Parenthesis: %s\n", yytext);
 ";"									printf("Semicolon: %s\n", yytext);
 "scan"|"print"|"repeat"|"if"|"else"|"else if"				printf("Keywords: %s\n", yytext);
-"int"|"char"|"float"|"string"						printf("Data Type: %s\n", yytext);
+"int"|"char"|"float"|"string"|"long"					printf("Data Types: %s\n", yytext);
 
 {letter}({letter}|{digit}|_)*						printf("Variable: %s\n", yytext);
 .									printf("Error: Undefined token - %s\n", yytext);
