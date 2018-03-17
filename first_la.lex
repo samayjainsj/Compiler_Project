@@ -18,6 +18,7 @@ any [a-zA-z0-9~`!@#$%\\^&*()-{}[\]=|/?.>,<'":;]
 
 "+"|"-"|"*"|"/"								printf("Arithmetic Operator: %s\n", yytext);
 "="									printf("Assign Operator: %s\n", yytext);
+"!"									printf("Unirary Operator Not: %s\n",yytext);
 ">="|"<="|">"|"<"|"=="|"!="						printf("Relational Operator: %s\n", yytext);
 
 "/*"({any})*"*/"							printf("Comment: %s\n", yytext);
